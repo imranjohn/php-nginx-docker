@@ -1,3 +1,4 @@
-FROM php:7.2-fpm-alpine
-
-RUN docker-php-ext-install pdo pdo_mysql
+FROM php:7.4-cli
+COPY . /usr/src/myapp
+WORKDIR /usr/src/myapp
+CMD [ "php", "./src/public/index.html" ]
